@@ -12,7 +12,7 @@ function getInfo(){
     for (i = 0; i < objPeople.length; i++){
         if(username == objPeople [i].username && password == objPeople [i].password){
             console.log(username + " on nyt kirjautunut sisään!")
-            window.location.href = "ota-yhteyttä/yhteys.html";
+            window.location.href = "tilaukset/yhteys.html";
             return
         }
     }
