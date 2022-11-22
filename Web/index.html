@@ -1,6 +1,10 @@
 <!DOCTYPE html>
 <html>
     <head>
+        <style>
+            form {text-align: center;}
+            main {text-align: center;}
+        </style>
         <meta charset="UTF-8">
         <title>Etusivu</title>
     </head>
@@ -13,14 +17,15 @@
             </ul>
         </nav>
         <form>
-            <p>Kirjaudu sisään</p>
-            <input id="username">
-            <input id="password">
+            <p style="font-size: 25px;"> Kirjaudu sisään</p>
+            Käyttäjätunnus: <input id="username">
+            Salasana: <input type="password" id="password2">
             <button type="button" onclick="getInfo()">Kirjaudu sisään</button>  
         </form>
 
         <script src="login.js"></script>
         <main>
+            <input type="checkbox" onclick="showPassword()">Näytä Salasana
             <!--<span>Jurvalaisten mielipiteitä</span>
             <span>, Jurvan maisemat</span>
             <p>Image 1</p>
