@@ -1,7 +1,7 @@
 const objPeople = [
     {
-        username: "Mikael",
-        password: "bob"
+        username: "VAMK",
+        password: "1234"
     }
 ]
 
