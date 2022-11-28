@@ -17,5 +17,20 @@
                 <a href="https://www.youtube.com/" target="_blank">Youtube</a>
             </ul>
         </nav> 
+        <script>
+            fetch("https://www.cc.puv.fi/~asa/cgi-bin/fetchOrders.py")
+                .then(res => {
+                    return res.json();
+                })
+                .then(data =>{
+                    console.log(data)
+                    data.forEach(customersearch =>{
+                        const markup = `<li>${customersearch.customer}</li>`;
+
+                        document.querySelector("ul").insertAdjacentHTML("beforeend", markup);
+                    })
+                })
+                .catch(error => console.log(error))
+        </script>
     </body>
 </html> 
