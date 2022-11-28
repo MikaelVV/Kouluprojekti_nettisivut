@@ -10,11 +10,23 @@
 
         </div>
         <header> <h1>Tilaushaku</h1> </header>
+
+        <table class="table table-striped">
+            <tr class="bg-info">
+                <th>Order ID</th>
+                <th>Customer ID</th>
+                <th>Customer</th> 
+
+            </tr>
+
+            <tbody id="informationTable">
+
+            </tbody>
+        </table>
         <nav>   
             <ul>    
                 <li><a href="../index.html"> Koti</a> </li>
                 <li> Ota yhteyttä</li>
-                <a href="https://www.youtube.com/" target="_blank">Youtube</a>
             </ul>
         </nav> 
         <script>
@@ -25,18 +37,33 @@
                 .then(data =>{
                     console.log(data)
                     data.forEach(customersearch =>{
-                        const markup = `<li>ORDERID: ${customersearch.orderid}</li>`;
-                        const markup2 = `<li>CUSTOMERID: ${customersearch.customerid}</li>`;
-                        const markup3 = `<li>CUSTOMER: ${customersearch.customer}</li>`;
+                        const markup = `<li>${customersearch.orderid}</li>`;
+                        const markup2 = `<li>${customersearch.customerid}</li>`;
+                        const markup3 = `<li>${customersearch.customer}</li>`;
                         
 
                         document.querySelector("ul").insertAdjacentHTML("beforeend", markup);
                         document.querySelector("ul").insertAdjacentHTML("beforeend", markup2);
                         document.querySelector("ul").insertAdjacentHTML("beforeend", markup3);
 
+
                     })
                 })
                 .catch(error => console.log(error))
+        
+        /*buildTable()
+        function buildTable(data){
+            const table = document.getElementById("informationTable")
+            
+            for (const i = 0; i < data.lenght; i++){
+                const row = `<tr>
+                                    <td>${data[i].orderid}
+                                    <td>${data[i].customerid}
+                                    <td>${data[i].customer}
+                            </tr>`
+                table.insertAdjacentHTML += row
+            }
+        }*/
         </script>
     </body>
 </html> 
