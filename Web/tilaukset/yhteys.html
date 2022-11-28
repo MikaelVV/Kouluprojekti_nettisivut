@@ -25,9 +25,15 @@
                 .then(data =>{
                     console.log(data)
                     data.forEach(customersearch =>{
-                        const markup = `<li>${customersearch.customer}</li>`;
+                        const markup = `<li>ORDERID: ${customersearch.orderid}</li>`;
+                        const markup2 = `<li>CUSTOMERID: ${customersearch.customerid}</li>`;
+                        const markup3 = `<li>CUSTOMER: ${customersearch.customer}</li>`;
+                        
 
                         document.querySelector("ul").insertAdjacentHTML("beforeend", markup);
+                        document.querySelector("ul").insertAdjacentHTML("beforeend", markup2);
+                        document.querySelector("ul").insertAdjacentHTML("beforeend", markup3);
+
                     })
                 })
                 .catch(error => console.log(error))
