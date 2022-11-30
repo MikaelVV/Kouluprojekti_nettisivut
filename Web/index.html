@@ -4,37 +4,23 @@
         <style>
             form {text-align: center;}
             main {text-align: center;}
+            body {background-color: dimgrey;}            
         </style>
         <meta charset="UTF-8">
         <title>Etusivu</title>
     </head>
     <body>
-        <header> <h1>Etusivu</h1> </header>
-        <nav>   
-            <ul>   
-                <li>Koti</li>
-                <li><a href="tilaukset/yhteys.html">Ota yhteyttä</a></li>
-            </ul>
-        </nav>
+        <style> body {font-size: 25px;} </style>
         <form>
-            <p style="font-size: 25px;"> Kirjaudu sisään</p>
+            <p style="font-size: 50px; color: black; padding-top: 175px; padding-bottom: 75px;"> Kirjaudu sisään</p>
             Käyttäjätunnus: <input id="username">
             Salasana: <input type="password" id="password2">
-            <button type="button" onclick="getInfo()">Kirjaudu sisään</button>  
+            <button type="button" onclick="getInfo()">Kirjaudu sisään</button>
         </form>
-
         <script src="login.js"></script>
         <main>
+            <p style="font-size: 25px;"></p>
             <input type="checkbox" onclick="showPassword()">Näytä Salasana
-            <!--<span>Jurvalaisten mielipiteitä</span>
-            <span>, Jurvan maisemat</span>
-            <p>Image 1</p>
-            <p>image 2</p>
-            <p>Tykkäävätkö ihmiset Jurvasta?</p> -->
         </main>
-        <footer>    
-            <!--<p>Image 3</p>
-            <p>Image 4</p>-->
-        </footer>
     </body>
 </html>
