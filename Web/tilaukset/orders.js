@@ -6,6 +6,7 @@ fetch("https://www.cc.puv.fi/~asa/cgi-bin/fetchOrders.py")
 .then(data =>{
     console.log(data)
     let tableData="";
+    //Kartoitetaan GET pyynnöstä saatu informaatio ja aletaan käyttämään sen tietoja.
     data.map((values)=>{
         tableData+= `<tr>
                     <td>${values.customer}</td>
