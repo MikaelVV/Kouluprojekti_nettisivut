@@ -6,6 +6,7 @@
             header {text-align: center;}
             body {text-align: center;}
             input {width: 350px;}
+            td {color: white;}
         </style>
         <meta charset="UTF-8">
         <title>Tilaukset</title>
@@ -13,9 +14,9 @@
   
     </head>
     <body>
-        <h1 class="text-center">Tilaushaku</h1>
-        <a href="../index.html" style="position:relative; bottom:30px; font-size:20px;"> Etusivu</a>
-
+        <style>body {background-color: dimgrey}</style>
+        <h1 class="text-center" style="color:white;">Tilaushaku</h1>
+        <a href="../index.html" style="position:relative; bottom:30px; font-size:20px;"> Kirjaudu ulos</a>
         <div class="topnav">
             <input type="text" placeholder="Haku..." id="search-input" onkeyup="searchFunction()">
 
@@ -23,24 +24,19 @@
 
         <table class="table table-bordered" id="myTable">
             <thead class="table-dark">
-              <tr>
-                <th scope="col">Customer</th>
-                <th scope="col">Sales person</th>
-                <th scope="col">CustomerID</th>
-                <th scope="col">OrderID</th>
-                <th scope="col">Comment</th>
-                <th scope="col">Delivery address</th>
-                <th scope="col">Delivery date</th>
-              </tr>
+                <tr>
+                    <th scope="col">Customer</th>
+                    <th scope="col">Sales person</th>
+                    <th scope="col">CustomerID</th>
+                    <th scope="col">OrderID</th>
+                    <th scope="col">Comment</th>
+                    <th scope="col">Delivery address</th>
+                    <th scope="col">Delivery date</th>
+                </tr>
             </thead>
             <tbody id="table_body">
-
             </tbody>
-          </table>
-        <nav>   
-            <ul>    
-            </ul>
-        </nav> 
+        </table>
         <script src="orders.js">
             function searchFunction(){
                 var input, filter, table, tr, td, i, txtValue;
