@@ -5,6 +5,7 @@
             h1 {text-align: center;}
             header {text-align: center;}
             body {text-align: center;}
+            input {width: 350px;}
         </style>
         <meta charset="UTF-8">
         <title>Tilaukset</title>
@@ -13,28 +14,27 @@
     </head>
     <body>
         <h1 class="text-center">Tilaushaku</h1>
+        <a href="../index.html" style="position:relative; bottom:30px; font-size:20px;"> Etusivu</a>
 
         <div class="topnav">
-            <input type="text" placeholder="Haku...">
+            <input type="text" placeholder="Haku..." id="search-input" onkeyup="searchFunction()">
 
         </div>
 
-        <table class="table">
+        <table class="table table-bordered" id="myTable">
             <thead class="table-dark">
               <tr>
                 <th scope="col">Customer</th>
+                <th scope="col">Sales person</th>
                 <th scope="col">CustomerID</th>
                 <th scope="col">OrderID</th>
-                <th scope="col">Handle</th>
+                <th scope="col">Comment</th>
+                <th scope="col">Delivery address</th>
+                <th scope="col">Delivery date</th>
               </tr>
             </thead>
             <tbody id="table_body">
-              <!--<tr>
-                <td>Name</td>
-                <td>Mark</td>
-                <td>Otto</td>
-                <td>@mdo</td>
-              </tr>-->
+
             </tbody>
           </table>
         <nav>   
@@ -42,41 +42,25 @@
             </ul>
         </nav> 
         <script src="orders.js">
-            //Tekee GET pyynnön ja hakee tiedot
-            fetch("https://www.cc.puv.fi/~asa/cgi-bin/fetchOrders.py")
-                .then(res => {
-                    return res.json();
-                })
-                .then(data =>{
-                    //console.log(data)
-                    data.forEach(customersearch =>{
-                        /*const markup = `<li>${customersearch.orderid}</li>`;
-                        const markup2 = `<li>${customersearch.customerid}</li>`;
-                        const markup3 = `<li>${customersearch.customer}</li>`;
-                        
-
-                        document.querySelector("ul").insertAdjacentHTML("beforeend", markup);
-                        document.querySelector("ul").insertAdjacentHTML("beforeend", markup2);
-                        document.querySelector("ul").insertAdjacentHTML("beforeend", markup3); */
-
-
-                    })
-                }) 
-                //.catch(error => console.log(error)) 
-        
-        /*buildTable()
-        function buildTable(data){
-            const table = document.getElementById("informationTable")
-            
-            for (const i = 0; i < data.lenght; i++){
-                const row = `<tr>
-                                    <td>${data[i].orderid}
-                                    <td>${data[i].customerid}
-                                    <td>${data[i].customer}
-                            </tr>`
-                table.insertAdjacentHTML += row
+            function searchFunction(){
+                var input, filter, table, tr, td, i, txtValue;
+                input = document.getElementById("search-input");
+                filter = input.value.toUpperCase();
+                table = document.getElementById("myTable")
+                tr = table.getElementsByTagName("tr");
+                for (i = 0; i < tr.length; i++)
+                {
+                    td = tr[i].getElementsByTagName("td")[0];
+                    if (td){
+                        txtValue = td.textContent || td.innerText;
+                        if(txtValue.toUpperCase().indexOf(filter) > -1){
+                            tr[i].style.display = "";
+                        }else{
+                            tr[i].style.display = "none";
+                        }
+                    }
+                }
             }
-        }*/
         </script>
     </body>
 </html> 
