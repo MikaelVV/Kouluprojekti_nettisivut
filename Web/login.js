@@ -17,7 +17,7 @@ function getInfo(){
         }
     }
     console.log("Väärä käyttäjätunnus tai salasana!")
-    //console.log("olet nyt kirjautunut sisään! " + username + password)
+    console.log("olet nyt kirjautunut sisään! " + username + password)
 }
 
 function showPassword(){
