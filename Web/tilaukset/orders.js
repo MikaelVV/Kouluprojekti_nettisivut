@@ -14,7 +14,7 @@ fetch("https://www.cc.puv.fi/~asa/cgi-bin/fetchOrders.py")
                     <td>${values.orderid}</td>
                     <td>${values.totalprice}$</td>
                     <td>${values.comment}</td>
-                    <td>${values.delivaddr}</td>
+                    <td>${"Delivery address: "+ values.delivaddr  + "<pre>"+ "Invoice Address: " + values.invaddr + "</pre>"}</td>
                     <td>${values.deliverydate}</td>
                     </tr>`;
     })
