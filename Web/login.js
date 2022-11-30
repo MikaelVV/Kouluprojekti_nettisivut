@@ -1,3 +1,4 @@
+//Luodaan valmiit käyttäjätunnukset.
 const objPeople = [
     {
         username: "VAMK",
@@ -12,12 +13,12 @@ function getInfo(){
     for (i = 0; i < objPeople.length; i++){
         if(username == objPeople [i].username && password == objPeople [i].password){
             console.log(username + " on nyt kirjautunut sisään!")
-            window.location.href = "tilaukset/yhteys.html";
+            window.location.href = "tilaukset/orderlist.html";
             return
+        }else{
+            alert("Väärä käyttäjätunnus tai salasana!")
         }
     }
-    console.log("Väärä käyttäjätunnus tai salasana!")
-    console.log("olet nyt kirjautunut sisään! " + username + password)
 }
 
 function showPassword(){
