@@ -8,54 +8,61 @@
         </style>
         <meta charset="UTF-8">
         <title>Tilaukset</title>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+  
     </head>
     <body>
-        <header> <h1>Tilaushaku</h1> </header>
+        <h1 class="text-center">Tilaushaku</h1>
 
         <div class="topnav">
             <input type="text" placeholder="Haku...">
 
         </div>
 
-        <table class="table table-striped">
-            <tr class="bg-info">
-                <th>Order ID</th>
-                <th>Customer ID</th>
-                <th>Customer</th> 
-
-            </tr>
-
-            <tbody id="informationTable">
-
+        <table class="table">
+            <thead class="table-dark">
+              <tr>
+                <th scope="col">Customer</th>
+                <th scope="col">CustomerID</th>
+                <th scope="col">OrderID</th>
+                <th scope="col">Handle</th>
+              </tr>
+            </thead>
+            <tbody id="table_body">
+              <!--<tr>
+                <td>Name</td>
+                <td>Mark</td>
+                <td>Otto</td>
+                <td>@mdo</td>
+              </tr>-->
             </tbody>
-        </table>
+          </table>
         <nav>   
             <ul>    
-                <li><a href="../index.html"> Koti</a> </li>
-                <li> Ota yhteyttä</li>
             </ul>
         </nav> 
-        <script>
+        <script src="orders.js">
+            //Tekee GET pyynnön ja hakee tiedot
             fetch("https://www.cc.puv.fi/~asa/cgi-bin/fetchOrders.py")
                 .then(res => {
                     return res.json();
                 })
                 .then(data =>{
-                    console.log(data)
+                    //console.log(data)
                     data.forEach(customersearch =>{
-                        const markup = `<li>${customersearch.orderid}</li>`;
+                        /*const markup = `<li>${customersearch.orderid}</li>`;
                         const markup2 = `<li>${customersearch.customerid}</li>`;
                         const markup3 = `<li>${customersearch.customer}</li>`;
                         
 
                         document.querySelector("ul").insertAdjacentHTML("beforeend", markup);
                         document.querySelector("ul").insertAdjacentHTML("beforeend", markup2);
-                        document.querySelector("ul").insertAdjacentHTML("beforeend", markup3);
+                        document.querySelector("ul").insertAdjacentHTML("beforeend", markup3); */
 
 
                     })
-                })
-                .catch(error => console.log(error))
+                }) 
+                //.catch(error => console.log(error)) 
         
         /*buildTable()
         function buildTable(data){
