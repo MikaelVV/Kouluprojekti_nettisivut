@@ -4,7 +4,7 @@
         <style>
             form {text-align: center;}
             main {text-align: center;}
-            body {background-color: dimgrey;}            
+            body {background-color: dimgrey;}        
         </style>
 
         <meta charset="UTF-8">
@@ -16,13 +16,13 @@
         <style> body {font-size: 25px;} </style>
         <form>
             <p style="font-size: 50px; color: black; padding-top: 175px; padding-bottom: 75px;"> Kirjaudu sisään</p>
-            Käyttäjätunnus: <input id="username">
-            Salasana: <input type="password" id="password2">
+            <input id="username" placeholder="Käyttäjätunnus... " style="width: 150px; height: 20px;">
+            <input type="password" id="password2" placeholder="Salasana..." style="width: 150px; height: 20px;">
             <button type="button" onclick="getInfo()">Kirjaudu sisään</button>
         </form>
         <script src="login.js"></script>
         <main>
-            <p style="font-size: 25px;"></p>
+            <p style="font-size: 5px;"></p>
             <input type="checkbox" onclick="showPassword()">Näytä Salasana
         </main>
     </body>
